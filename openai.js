@@ -51,4 +51,5 @@ if (!data.candidates || !data.candidates.length) {
   throw new Error("No response returned from Gemini.");
 }
 
-return data.candidates[0].content.parts[0].text;
+return data.candidates[0].content.parts[0].text
+}
