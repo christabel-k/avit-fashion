@@ -1,51 +1,51 @@
 exports.handler = async (event) => {
-  const API_KEY = process.env.GROQ_API_KEY;
+  const API_KEY = process.env.GEMINI_API_KEY;
 
   if (!API_KEY) {
     return {
       statusCode: 500,
       body: JSON.stringify({
-        error: "Missing GROQ_API_KEY"
-      })
+        error: "Missing GEMINI_API_KEY",
+      }),
     };
   }
 
   const { prompt } = JSON.parse(event.body);
 
   try {
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions/openai", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${API_KEY}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "llama-3.3-70b-versatile",
-        messages: [
-          {
-            role: "user",
-            content: prompt
-          }
-        ],
-        temperature: 0.3
-      })
-    });
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          contents: [
+            {
+              parts: [
+                {
+                  text: prompt,
+                },
+              ],
+            },
+          ],
+        }),
+      }
+    );
 
     const data = await response.json();
 
     return {
       statusCode: response.status,
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
     };
-
   } catch (err) {
-
     return {
       statusCode: 500,
       body: JSON.stringify({
-        error: err.message
-      })
+        error: err.message,
+      }),
     };
-
   }
 };

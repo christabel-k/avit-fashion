@@ -30,29 +30,25 @@ Rules:
 - recommendation should be one short sentence.
 `;
 
-  try {
-    const response = await fetch("/.netlify/functions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        prompt,
-      }),
-    });
+  const response = await fetch("/.netlify/functions/gemini", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ prompt }),
+});
 
-    const data = await response.json();
+const data = await response.json();
 
-    console.log("Response status:", response.status);
-    console.log("Response data:", data);
+console.log("Status:", response.status);
+console.log("Response:", data);
 
-    if (!response.ok) {
-      throw new Error(data.error?.message || "Gemini request failed");
-    }
-
-    const result = data.choices[0].message.content;
-    return result;
-  } catch (error) {
-    console.log(error);
-  }
+if (!response.ok) {
+  throw new Error(data.error?.message || "Gemini request failed");
 }
+
+if (!data.candidates || !data.candidates.length) {
+  throw new Error("No response returned from Gemini.");
+}
+
+return data.candidates[0].content.parts[0].text;
