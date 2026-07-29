@@ -1,4 +1,3 @@
-
 async function getSizeFromAI(measurements) {
   const prompt = `
 You are a professional fashion sizing assistant.
@@ -31,24 +30,29 @@ Rules:
 - recommendation should be one short sentence.
 `;
 
-  const response = await fetch("/.netlify/functions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      prompt,
-    }),
-  });
+  try {
+    const response = await fetch("/.netlify/functions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        prompt,
+      }),
+    });
 
-  const data = await response.json();
+    const data = await response.json();
 
-  console.log("Response status:", response.status);
-  console.log("Response data:", data);
+    console.log("Response status:", response.status);
+    console.log("Response data:", data);
 
-  if (!response.ok) {
-    throw new Error(data.error?.message || "Gemini request failed");
+    if (!response.ok) {
+      throw new Error(data.error?.message || "Gemini request failed");
+    }
+
+    const result = data.choices[0].message.content;
+    return result;
+  } catch (error) {
+    console.log(error);
   }
-
-  return data.candidates[0].content.parts[0].text;
 }
