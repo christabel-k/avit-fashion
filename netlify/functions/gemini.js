@@ -1,5 +1,5 @@
 exports.handler = async (event) => {
-  const API_kEY = process.env.API_KEY;
+  const API_kEY = process.env.GEMINI_API_KEY;
 
   const { prompt } = JSON.parse(event.body);
 
