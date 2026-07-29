@@ -13,7 +13,7 @@ exports.handler = async (event) => {
   const { prompt } = JSON.parse(event.body);
 
   try {
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions/openai", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${API_KEY}`,
