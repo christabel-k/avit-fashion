@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avit</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Gothic&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+
+    <!-- desktop-navbar -->
+ <nav class="navbar">
+
+    <div class="logo">
+        <h1>Avit</h1>
+    </div>
+
+    <div class="gender">
+           <div class="nav-home">
+        <a href="index.html">Home</a>
+    </div>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+    </div>
+
+   
+        <div class="srch-bar">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"/>
+            </svg>
+
+             <input
+               type="text"
+               id="search-input"
+               placeholder="Search product...">
+
+              <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
+
+    <div class="actions">
+        <a href="find-fit.html" class="fit-btn">
+            Find My Fit
+        </a>
+
+     <a href="cart.html" class="cart-btn">
+    🛒 Cart (<span class="cart-count">0</span>)
+    </a>
+    </div>
+</nav>
+<!-- end of desktop-navbar -->
+
+
+
+
+<!-- mobile navbar -->
+<section class="media-nav">
+
+    <div class="avit">
+     <button id="menu-btn">
+                   ☰
+            </button>
+
+    <div class="logo">
+        <h1>Avit</h1>
+    </div>
+
+    
+        <div class="srch-bar">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"/>
+            </svg>
+
+             <input type="text"id="mobile-search-input" placeholder="Search product...">
+                <div id="mobile-search-dropdown" class="search-dropdown"></div>
+        </div>
+        </div>
+        </section>
+
+
+<div class="navka" id="navka">
+     <div class="gender">
+        <a href="index.html">Home</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+    </div>
+
+       <div class="actions">
+        <a href="find-fit.html" class="fit-btn">
+            Find My Fit
+        </a>
+
+     <a href="cart.html" class="cart-btn">
+    🛒 Cart (<span class="cart-count">0</span>)
+</a>
+    </div>
+</div>
+<!-- end of mobile-navbar -->
+
+
+    <section>
+      <div class="herosection">
+        <img src="images/hero.png" alt="cloth"/>
+      </div>
+
+      <div class="avit-text">
+        <h2>Get any kind of of fashion style with Avit</h2>
+      </div>
+
+      
+
+      <main class="first-rw">
+        <h2>Men's Shirts</h2>
+
+        <div id="mens-shirts" class="image-row"></div>
+      </main>
+   
+      <main class="first-rw">
+        <h2>Mens Shoes</h2>
+        <div id="mens-shoes" class="image-row">
+
+        </div>
+      </main>
+
+   
+      <main class="first-rw">
+        <h2>Mens Watch</h2>
+        <div id="mens-watches" class="image-row">
+
+        </div>
+      </main>
+   
+      <main class="first-rw">
+        <h2>Women's Dress</h2>
+        <div id="womens-dresses" class="image-row">
+
+        </div>
+      </main>
+   
+      <main class="first-rw">
+        <h2>Women's Shoe</h2>
+        <div id="womens-shoes" class="image-row">
+
+        </div>
+      </main>
+   
+
+      <main class="first-rw">
+        <h2>Women's Bags</h2>
+        <div id="womens-bags" class="image-row">
+
+        </div>
+      </main>
+   
+      
+      <main class="first-rw">
+        <h2>Tops</h2>
+        <div id="tops" class="image-row">
+
+        </div>
+      </main>
+
+<!--       
+      <main class="first-rw">
+        <h2>Recommended</h2>
+        <div class="image-row1">
+          <div class="img-image">
+            <img src="images/Instagram.png" alt="image" />
+            <img src="images/iPhone wallpaper.png" alt="image" />
+            <img src="images/manique.png" alt="image" />
+            <img src="images/tf.png" alt="image" />
+          </div>
+
+          <div class="img-g">
+            <img src="images/shoe1.png" alt="image" />
+          </div>
+        </div>
+      </main>
+
+
+
+  
+      <main class="first-rw">
+        <h2>Recommended</h2>
+        <div class="image-row">
+
+            <div class="single-box">
+          <img src="images/600456562859320070.png" alt="image" />
+             <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+           
+    <div class="single-box">
+          <img src="images/65724475808430015.png" alt="image" />
+               <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+
+    <div class="single-box">
+          <img src="images/cs.png" alt="image" />
+       <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+</div>
+
+
+           <div class="single-box">
+          <img src="images/female mannequin.png" alt="image" />
+                <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+
+
+    <div class="singlebox">
+          <img src="images/Instagram.png" alt="image" />
+      <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+
+         <div class="single-box">
+          <img src="images/iPhone wallpaper.png" alt="image" />
+             <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+
+    <div class="single-box">
+          <img src="images/manique.png" alt="image" />
+                 <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+    <div class="single-box">
+          <img src="images/tf.png" alt="image" />
+                         <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+    
+    <div class="single-box">
+          <img src="images/tp.png" alt="images" />
+                                <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+        </div>
+      </main>
+
+
+
+      <main class="first-rw">
+        <h2>Fashion Evolution</h2>
+        <div class="image-row2">
+          <img src="images/couplr.png" alt="image" />
+
+
+
+          <div class="head2">
+          <h2>The Evolution of Personal Style</h2>
+
+          <p>
+           Fashion is far more than just the
+            clothes we wear; it is a profound visual language and a dynamic
+            cultural phenomenon. From the glamorous runways of Vogue to the
+            streets of Nigeria, style empowers individuals to express their
+            unique identities, moods, and values.
+          </p>
+        </div>
+      </main>
+
+
+
+    
+      <main class="first-rw">
+        <h2>Recommended</h2>
+        <div class="image-row">
+
+            <div class="single-box">
+          <img src="images/600456562859320070.png" alt="image" />
+             <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+           
+    <div class="single-box">
+          <img src="images/65724475808430015.png" alt="image" />
+               <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+
+    <div class="single-box">
+          <img src="images/cs.png" alt="image" />
+       <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+</div>
+
+
+           <div class="single-box">
+          <img src="images/female mannequin.png" alt="image" />
+                <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+
+
+    <div class="singlebox">
+          <img src="images/Instagram.png" alt="image" />
+      <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+
+         <div class="single-box">
+          <img src="images/iPhone wallpaper.png" alt="image" />
+             <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+
+    <div class="single-box">
+          <img src="images/manique.png" alt="image" />
+                 <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+    <div class="single-box">
+          <img src="images/tf.png" alt="image" />
+                         <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+    
+    <div class="single-box">
+          <img src="images/tp.png" alt="images" />
+                                <h3>Black Shirt</h3>
+
+    <p class="price">₦15,000</p>
+
+    <button
+        class="add-cart"
+        data-id="1"
+        data-name="Black Shirt"
+        data-price="15000"
+        data-image="images/shirt.jpg">
+        Add to Cart
+    </button>
+    </div>
+
+        </div>
+      </main>  -->
+
+
+
+    <footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2 class="logo">Avit</h2>
+            <p>
+                Discover clothing tailored to your body. Get any kind of fashion style with avit
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search.html">Shop</a></li>
+                <li><a href="input.html">Find My Fit</a></li>
+                <li><a href="payment.html">Cart</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Support</h3>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Shipping</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact</h3>
+            <p>Email: support@avit.com</p>
+            <p>Phone: +234 800 000 0000</p>
+
+            <div class="socials">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Avit. All Rights Reserved.</p>
+    </div>
+</footer>
+
+
+<script src="index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find My Fit</title>
+    <link rel="stylesheet" href="fit.css">
+</head>
+<body>
+
+    <!-- desktop nav -->
+    <nav class="navbar">
+    <div class="logo">
+        <h1>Avit</h1>
+    </div>
+
+    <div class="gender">
+           <div class="nav-home">
+        <a href="index.html">Home</a>
+    </div>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+    </div>
+   
+
+        <div class="srch-bar">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"/>
+            </svg>
+
+             <input
+               type="text"
+               id="search-input"
+               placeholder="Search product...">
+
+              <div id="search-dropdown" class="search-dropdown"></div>
+        </div>
+
+    <div class="actions">
+        <a href="find-fit.html" class="fit-btn">
+            Find My Fit
+        </a>
+
+     <a href="cart.html" class="cart-btn">
+    🛒 Cart (<span class="cart-count">0</span>)
+    </a>
+    </div>
+   
+</nav>
+
+<!-- desktop/end nav-->
+
+
+
+<!-- mobile nav -->
+<section class="media-nav">
+
+    <div class="avit">
+     <button id="menu-btn">
+                   ☰
+            </button>
+
+    <div class="logo">
+        <h1>Avit</h1>
+    </div>
+
+    
+        <div class="srch-bar">
+
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                <path d="M480 272C480 317.9 465.1 360.3 440 394.7L566.6 521.4C579.1 533.9 579.1 554.2 566.6 566.7C554.1 579.2 533.8 579.2 521.3 566.7L394.7 440C360.3 465.1 317.9 480 272 480C157.1 480 64 386.9 64 272C64 157.1 157.1 64 272 64C386.9 64 480 157.1 480 272zM272 416C351.5 416 416 351.5 416 272C416 192.5 351.5 128 272 128C192.5 128 128 192.5 128 272C128 351.5 192.5 416 272 416z"/>
+            </svg>
+
+             <input type="text"id="mobile-search-input" placeholder="Search product...">
+
+                <div id="mobile-search-dropdown" class="search-dropdown"></div>
+
+        </div>
+        </div>
+        </section>
+
+<div class="navka" id="navka">
+     <div class="gender">
+           <div class="nav-home">
+        <a href="index.html">Home</a>
+    </div>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">Kids</a>
+    </div>
+
+       <div class="actions">
+        <a href="find-fit.html" class="fit-btn">
+            Find My Fit
+        </a>
+
+     <a href="cart.html" class="cart-btn">
+    🛒 Cart (<span class="cart-count">0</span>)
+</a>
+    </div>
+</div>
+<!-- mobile/end nav -->
+
+
+    
+       <section class="fit-section">
+    <div class="fit-container">
+
+        <h2>Find Your Perfect Fit</h2>
+
+        <form id="fit-form">
+
+            <!-- Height -->
+            <div class="form-group">
+                <label for="height">Height</label>
+                <input type="number" id="height" name="height" placeholder="Enter your height (cm)">
+            </div>
+
+            <!-- Weight -->
+            <div class="form-group">
+                <label for="weight">Weight</label>
+                <input type="number" id="weight" name="weight" placeholder="Enter your weight (kg)">
+            </div>
+
+            <!-- Gender -->
+            <div class="form-group">
+                <label>Gender</label>
+
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="male">
+                        Male
+                    </label>
+
+                    <label class="radio-option">
+                        <input type="radio" name="gender" value="female">
+                        Female
+                    </label>
+                </div>
+            </div>
+
+            <!-- Chest -->
+            <div class="form-group">
+                <label for="chest">Chest</label>
+                <input type="number" id="chest" name="chest" placeholder="Chest measurement (cm)">
+            </div>
+
+            <!-- Waist -->
+            <div class="form-group">
+                <label for="waist">Waist</label>
+                <input type="number" id="waist" name="waist" placeholder="Waist measurement (cm)">
+            </div>
+
+            <!-- Hip -->
+            <div class="form-group">
+                <label for="hip">Hip</label>
+                <input type="number" id="hip"
+                    name="hip" placeholder="Hip measurement (cm)">
+            </div>
+
+            <!-- Shoulder -->
+            <div class="form-group">
+                <label for="shoulder">Shoulder Width</label>
+                <input type="number" id="shoulder" name="shoulder" placeholder="Shoulder width (cm)">
+            </div>
+
+            <!-- Preferred Fit -->
+            <div class="form-group">
+                <label>Preferred Fit</label>
+
+                <div class="radio-group">
+
+                    <label class="radio-option">
+                        <input type="radio" name="fit" value="slim">
+                        Slim
+                    </label>
+
+                    <label class="radio-option">
+                        <input
+                            type="radio"
+                            name="fit"
+                            value="regular">
+                        Regular
+                    </label>
+
+                    <label class="radio-option">
+                        <input
+                            type="radio"
+                            name="fit"
+                            value="oversized">
+                        Oversized
+                    </label>
+
+                </div>
+            </div>
+
+            <button type="submit" class="find-size-btn" id="find-size-btn">
+                Find My Size
+            </button>
+            <div id="ai-result"></div>
+        </form>
+    </div>
+</section>
+
+
+<script src="find-my-fit.js"></script>
+
+
+</body>
+</html>
