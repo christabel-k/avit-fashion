@@ -46,9 +46,7 @@ form.addEventListener("submit", async (e) => {
 
      const result = JSON.parse(await getSizeFromAI(fitObject));
 
-    
     //  localStorage.setItem("userFit", JSON.stringify(result));
-
 
   resultBox.innerHTML = `
 <div class="fit-result">
@@ -89,7 +87,7 @@ form.addEventListener("submit", async (e) => {
     let message = error.message;
 
     if (message.includes("Quota exceeded")) {
-        message = "Our AI is currently busy. Please wait about a minute and try again.";
+        message = "Avit is currently busy. Please wait about a minute and try again.";
     }
 
     resultBox.innerHTML = `
