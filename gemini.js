@@ -30,7 +30,7 @@ Rules:
 - recommendation should be one short sentence.
 `;
 
-  const response = await fetch("/.netlify/functions/gemini", {
+  const response = await fetch("/api/gemini", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
