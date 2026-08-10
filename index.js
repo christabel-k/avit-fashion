@@ -43,12 +43,33 @@ function displayProducts(products, containerId) {
   });
 }
 
-async function fetchCategory(category, containerId) {
-  const response = await fetch(`${BASE_URL}${category}`);
-  const data = await response.json();
 
-  console.log(data.products);
-  displayProducts(data.products, containerId);
+async function fetchCategory(category, containerId) {
+
+    showLoader("Loading Products");
+
+    try {
+
+        const response = await fetch(`${BASE_URL}${category}`);
+
+        if (!response.ok) {
+            throw new Error("Failed to load products");
+        }
+
+        const data = await response.json();
+        console.log(data.products);
+        displayProducts(data.products, containerId);
+        hideLoader();
+
+    } catch (error) {
+        console.error(error);
+        if (!navigator.onLine) {
+            showNetworkError();
+        } else {
+            hideLoader();
+            alert("Unable to load products. Please try again.");
+        }
+    }
 }
 
 
