@@ -8,8 +8,8 @@
 }
 
 body {
-  background: #f8f8f8;
-  color: #111;
+  background-color: #090d12;;
+  color: white;
 }
 
 .navbar {
@@ -282,7 +282,7 @@ h1 {
 }
 
 .cart-item {
-  background: #fff;
+  background: rgba(255,255,255,0.05);
   border-radius: 20px;
   padding: 28px;
   display: grid;

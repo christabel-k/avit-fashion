@@ -2,6 +2,10 @@ const BASE_URL = "https://dummyjson.com/products/category/";
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+const slides = document.querySelectorAll(".hero-slide");
+const dots = document.querySelectorAll(".hero-dot");
+const nextBtn = document.querySelector(".hero-next");
+const prevBtn = document.querySelector(".hero-prev");
 
 const searchInput = document.getElementById("search-input");
 const dropdown = document.getElementById("search-dropdown");
@@ -11,6 +15,7 @@ const mobileSearchInput = document.getElementById("mobile-search-input");
 const mobileDropdown = document.getElementById("mobile-search-dropdown");
 
 
+let currentSlide = 0;
 
 function displayProducts(products, containerId) {
   const container = document.getElementById(containerId);
@@ -46,8 +51,6 @@ function displayProducts(products, containerId) {
 
 async function fetchCategory(category, containerId) {
 
-    showLoader("Loading Products");
-
     try {
 
         const response = await fetch(`${BASE_URL}${category}`);
@@ -57,18 +60,15 @@ async function fetchCategory(category, containerId) {
         }
 
         const data = await response.json();
-        console.log(data.products);
+
+        console.log(category, "loaded");
+
         displayProducts(data.products, containerId);
-        hideLoader();
 
     } catch (error) {
-        console.error(error);
-        if (!navigator.onLine) {
-            showNetworkError();
-        } else {
-            hideLoader();
-            alert("Unable to load products. Please try again.");
-        }
+
+        console.error(`Error loading ${category}:`, error);
+
     }
 }
 
@@ -191,6 +191,100 @@ mobileSearchInput.addEventListener("keydown", (e) => {
 
 
 
+
+function showSlide(index, direction = "next") {
+
+    const current = slides[currentSlide];
+    const next = slides[index];
+
+    if (current === next) return;
+
+    next.style.transition = "none";
+
+    if (direction === "next") {
+        next.style.transform = "translateX(calc(100% + 20px))";
+    } else {
+        next.style.transform = "translateX(calc(-100% - 20px))";;
+    }
+
+    next.classList.add("active");
+
+    requestAnimationFrame(() => {
+
+        requestAnimationFrame(() => {
+
+            current.style.transform =
+                direction === "next"
+                    ? "translateX(calc(-100% - 20px))"
+                    : "translateX(calc(100% + 20px))";
+
+            next.style.transform = "translateX(0)";
+
+        });
+
+    });
+
+    // Update dots
+    dots.forEach(dot => {
+        dot.classList.remove("active");
+    });
+
+    dots[index].classList.add("active");
+
+    // Update current slide
+    currentSlide = index;
+}
+
+
+nextBtn.addEventListener("click", () => {
+
+    const nextIndex =
+        (currentSlide + 1) % slides.length;
+
+    showSlide(nextIndex, "next");
+
+});
+
+
+prevBtn.addEventListener("click", () => {
+
+    const prevIndex =
+        (currentSlide - 1 + slides.length) % slides.length;
+
+    showSlide(prevIndex, "prev");
+
+});
+
+
+dots.forEach((dot, index) => {
+
+    dot.addEventListener("click", () => {
+
+        const direction =
+            index > currentSlide
+                ? "next"
+                : "prev";
+
+        showSlide(index, direction);
+    });
+});
+
+
+setInterval(() => {
+
+    const nextIndex =
+        (currentSlide + 1) % slides.length;
+
+    showSlide(nextIndex, "next");
+
+}, 5000);
+
+
+
+
+
+
+
 menuBtn.addEventListener("click", (event) => {
     event.stopPropagation();
 
@@ -205,11 +299,24 @@ document.addEventListener("click", (event) => {
     }
 });
 
-updateCartCount();
-fetchCategory("mens-shirts", "mens-shirts");
-fetchCategory("mens-shoes", "mens-shoes");
-fetchCategory("mens-watches", "mens-watches");
-fetchCategory("womens-dresses", "womens-dresses");
-fetchCategory("womens-shoes", "womens-shoes");
-fetchCategory("womens-bags", "womens-bags");
-fetchCategory("tops", "tops");
+
+
+
+
+
+if (!navigator.onLine) {
+
+    showLoader("No Internet Connection");
+    showNetworkError();
+
+} else {
+
+    fetchCategory("mens-shirts", "mens-shirts");
+    fetchCategory("mens-shoes", "mens-shoes");
+    fetchCategory("mens-watches", "mens-watches");
+    fetchCategory("womens-dresses", "womens-dresses");
+    fetchCategory("womens-shoes", "womens-shoes");
+    fetchCategory("womens-bags", "womens-bags");
+    fetchCategory("tops", "tops");
+
+}

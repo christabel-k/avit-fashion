@@ -4,22 +4,32 @@ const text = document.getElementById("loader-text");
 const retry = document.getElementById("retry-btn");
 
 let slowConnectionTimer;
+function showLoader(message = "Loading...") {
 
-function showLoader(message = "loading...") {
+    if (!loader) return;
+
     loader.classList.remove("hidden");
     title.textContent = message;
-    text.textContent = "Please wait while we prepare everything.";
+    text.textContent =
+        "Please wait while we prepare everything.";
+
     retry.classList.add("hidden");
+
     slowConnectionTimer = setTimeout(() => {
 
         text.textContent =
-        "This is taking longer than usual. Your connection may be slow.";
+            "This is taking longer than usual. Your connection may be slow.";
 
     }, 5000);
 }
 
+
 function hideLoader() {
-    clearTimeout(slowConnectionTimer)
+
+    if (!loader) return;
+
+    clearTimeout(slowConnectionTimer);
+
     loader.classList.add("hidden");
 }
 
@@ -31,16 +41,16 @@ function showNetworkError() {
 }
 
 
-
-
-retry.onclick = () => {
-    location.reload();
-};
+if (retry) {
+    retry.onclick = () => {
+        location.reload();
+    };
+}
 
 window.addEventListener("offline", () => {
     showNetworkError();
 });
 
 window.addEventListener("online", () => {
-    hideLoader();
+    location.reload();
 });

@@ -102,10 +102,7 @@ form.addEventListener("submit", async (e) => {
     button.disabled = false;
     button.textContent = "Find My Size";
 }
-
-
 });
-
 
 
 

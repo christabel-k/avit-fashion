@@ -8,8 +8,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Gothic&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  </head>
+<link rel="stylesheet" href="loader.css">  
+</head>
   <body>
+
+
+
+
+    <div id="loader-overlay" class="loader-overlay hidden">
+
+    <div class="loader-box">
+
+        <div class="spinner"></div>
+
+        <h2 id="loader-title">Loading...</h2>
+
+        <p id="loader-text">
+            Please wait while we prepare everything.
+        </p>
+
+        <button id="retry-btn" class="hidden">
+            Retry
+        </button>
+
+    </div>
+
+</div>
+
+
 
 
     <!-- desktop-navbar -->
@@ -105,9 +131,162 @@
 
 
     <section>
-      <div class="herosection">
-        <img src="images/hero.png" alt="cloth"/>
-      </div>
+
+ <section class="hero">
+
+    <!-- Slide 1 -->
+    <div class="hero-slide active">
+
+        <div class="hero-content">
+            <p class="hero-label">NEW COLLECTION</p>
+
+            <h1>Find Your Perfect Fit.</h1>
+
+            <p>
+                Discover styles made to fit your look.
+            </p>
+
+            <a href="#" class="hero-btn">
+                Shop Collection
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- Slide 2 -->
+    <div class="hero-slide">
+
+        <div class="hero-content">
+            <p class="hero-label">MEN'S COLLECTION</p>
+
+            <h1>Style That Fits You.</h1>
+
+            <p>
+                Discover our latest men's collection.
+            </p>
+
+            <a href="#" class="hero-btn">
+                Shop Men
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- Slide 3 -->
+    <div class="hero-slide">
+
+        <div class="hero-content">
+            <p class="hero-label">MEN'S FIT</p>
+
+            <h1>Know Your Size.</h1>
+
+            <p>
+                Find the right fit before you shop.
+            </p>
+
+            <a href="#" class="hero-btn">
+                Find My Fit
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- Slide 4 -->
+    <div class="hero-slide">
+
+        <div class="hero-content">
+            <p class="hero-label">WOMEN'S COLLECTION</p>
+
+            <h1>Made For Your Style.</h1>
+
+            <p>
+                Explore our latest women's collection.
+            </p>
+
+            <a href="#" class="hero-btn">
+                Shop Women
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- Slide 5 -->
+    <div class="hero-slide">
+
+        <div class="hero-content">
+            <p class="hero-label">WOMEN'S COLLECTION</p>
+
+            <h1>Style Made Personal.</h1>
+
+            <p>
+                Discover pieces made to complement your style.
+            </p>
+
+            <a href="#" class="hero-btn">
+                Explore Women
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- Slide 6 -->
+    <div class="hero-slide">
+
+        <div class="hero-content">
+            <p class="hero-label">AVIT FIT</p>
+
+            <h1>Your Fit. Your Style.</h1>
+
+            <p>
+                Let AVIT help you discover your perfect size.
+            </p>
+
+            <a href="#" class="hero-btn">
+                Find My Fit
+            </a>
+        </div>
+
+    </div>
+
+
+    <!-- Previous button -->
+    <button class="hero-arrow hero-prev">
+        &#10094;
+    </button>
+
+
+    <!-- Next button -->
+    <button class="hero-arrow hero-next">
+        &#10095;
+    </button>
+
+
+    <!-- Dots -->
+    <div class="hero-dots">
+
+        <button class="hero-dot active"></button>
+
+        <button class="hero-dot"></button>
+
+        <button class="hero-dot"></button>
+
+        <button class="hero-dot"></button>
+
+        <button class="hero-dot"></button>
+
+        <button class="hero-dot"></button>
+
+    </div>
+
+</section>
+
+
+
 
       <div class="avit-text">
         <h2>Get any kind of of fashion style with Avit</h2>
@@ -581,11 +760,8 @@
     </div>
 </footer>
 
-
-
-
-
-
+<script src="loader.js"></script>
 <script src="index.js"></script>
+
   </body>
 </html>
